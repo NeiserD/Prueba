@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+
+        </div>
+
+        <div class="container col-lg-6">
+            <h2 class="subtitulos text-center bg-primary">Crear nueva Oferta</h2>
+            <form action="/Oferta/Editar" method="post">
+                <label>Nombre</label>
+                <input class="form-control" autocomplete="off" name="nombre" value="@Model.nombre" />
+                <br />
+                <label>Fecha de Inicio</label>
+                <input class="form-control" autocomplete="off" name="fechaInicio" value="@Model.fechaInicio" />
+                <br />
+                <label>Fecha de Fin</label>
+                <input class="form-control" autocomplete="off" name="fechaFin" value="@Model.fechaFin" />
+                <br />
+                <label>Descripción</label>
+                <input style="height:45px" class="form-control" autocomplete="off" name="descripcion" value="@Model.descripcion" />
+                <br />
+                <button class="btn btn-primary">Guardar</button>
+                <a class="btn btn-danger" href="/Oferta">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+

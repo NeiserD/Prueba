@@ -1,0 +1,86 @@
+﻿@model DIARS_PROYECTO_FINAL.Models.Usuario
+@{
+    ViewBag.Title = "Login";
+}
+
+<style>
+    strong {
+    color:red;
+    }
+    label {
+        color:rgba(248, 245, 245, 0.77);
+    }
+</style>
+
+    <div class="login-wrap">
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Iniciar Sesión</label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarse</label>
+            <div class="login-form  " role="menu">
+
+                <div class="sign-in-htm">
+                    <form action="/User/Login" method="post">
+                        <fieldset>
+                            <div class="group">
+                                <label for="user" class="label">Usuario</label>
+                                <input id="user" type="text" autocomplete="off" class="input" value="" name="username">
+                                <strong>@Html.ValidationMessage("username")</strong>
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Contraseña</label>
+                                <input id="pass" type="password" autocomplete="off" class="input" data-type="password" name="password">
+                                <strong>@Html.ValidationMessage("password")</strong>
+                            </div>
+                            @*<div class="group">
+                                    <input id="check" type="checkbox" class="check">
+                                    <label for="check"><span class="icon"></span>Acepto recibir notificaciones</label>
+                                </div>*@
+                            <a class="btn btn-dark" style="color:white" href="/Home">¿Olvido su contraseña?</a>
+
+                            <div>
+
+                                <strong>@Html.ValidationMessage("invalid") </strong>
+                            </div>
+                            <br />
+                            <div class="group">
+                                <input type="submit" class=" btn button" value="Login">
+                            </div>
+                        </fieldset>
+                    </form>
+                    <div class="hr"></div>
+                    <div> </div>
+                </div>
+
+                @*------------------------------------Esto es el registrar----------------------------------*@
+                <form action="/User/Registrar" method="post">
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="user" class="label">Nombre de usuario</label>
+                            <input id="user" type="text" class="input" name="username">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Correo electrónico</label>
+                            <input id="pass" type="password" class="input" data-type="password">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Contraseña</label>
+                            <input id="pass" type="password" class="input" data-type="password" name="password">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Celular</label>
+                            <input id="pass" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Dirección</label>
+                            <input id="pass" type="text" class="input">
+                        </div>
+
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign Up">
+                        </div>
+                        <div class="hr"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
